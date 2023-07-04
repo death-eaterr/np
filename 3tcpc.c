@@ -11,7 +11,7 @@ void send_file(FILE *fp, int sockfd){
  
   while(fgets(data, SIZE, fp) != NULL) {
     if (send(sockfd, data, sizeof(data), 0) == -1) {
-      perror("[-]Error in sending file.");
+      perror("Error in sending file.");
       exit(1);
     }
     bzero(data, SIZE);
@@ -30,7 +30,7 @@ int main(){
  
   sockfd = socket(AF_INET, SOCK_STREAM, 0);
   if(sockfd < 0) {
-    perror("[-]Error in socket");
+    perror("Error in socket");
     exit(1);
   }
   printf("[+]Server socket created successfully.\n");
@@ -41,21 +41,21 @@ int main(){
  
   e = connect(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr));
   if(e == -1) {
-    perror("[-]Error in socket");
+    perror("Error in socket");
     exit(1);
   }
- printf("[+]Connected to Server.\n");
+ printf("Connected to Server.\n");
  
   fp = fopen(filename, "r");
   if (fp == NULL) {
-    perror("[-]Error in reading file.");
+    perror("Error in reading file.");
     exit(1);
   }
  
   send_file(fp, sockfd);
-  printf("[+]File data sent successfully.\n");
+  printf("File data sent successfully.\n");
  
-  printf("[+]Closing the connection.\n");
+  printf("Closing the connection.\n");
   close(sockfd);
  
   return 0;
