@@ -33,7 +33,7 @@ int main(){
     perror("Error in socket");
     exit(1);
   }
-  printf("[+]Server socket created successfully.\n");
+  printf("Server socket created successfully.\n");
  
   server_addr.sin_family = AF_INET;
   server_addr.sin_port = port;
