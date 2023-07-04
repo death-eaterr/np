@@ -35,7 +35,7 @@ int main(){
   int server_sockfd;
   struct sockaddr_in server_addr;
   FILE *fp;
-  char *filename = "client.txt";
+  char *filename = "send.txt";
 
   server_sockfd = socket(AF_INET, SOCK_DGRAM, 0);
   if (server_sockfd < 0){
