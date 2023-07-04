@@ -8,7 +8,7 @@
 
 void write_file(int sockfd, struct sockaddr_in addr){
   FILE *fp;
-  char *filename = "server.txt";
+  char *filename = "recv.txt";
   int n;
   char buffer[SIZE];
   socklen_t addr_size;
