@@ -17,7 +17,7 @@ int main (int argc, char *argv[])
 	
 	NodeContainer cnodes;
 	cnodes.Add(pnodes.Get(1));
-	cnodes.Create(4);
+	cnodes.Create(3);
 	
 	PointToPointHelper p;
 	p.SetDeviceAttribute("DataRate",StringValue("5Mbps"));
